@@ -1,0 +1,4 @@
+#quote img {
+  margin-bottom: 1em;
+  filter: invert(57%) sepia(0%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}

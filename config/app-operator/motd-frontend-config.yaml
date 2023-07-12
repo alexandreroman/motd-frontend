@@ -1,0 +1,30 @@
+apiVersion: "config.apps.tanzu.vmware.com/v1alpha4"
+kind: ConfigurationSource
+metadata:
+  name: motd-frontend-config
+spec:
+  backends:
+  - type: git
+    uri: https://github.com/alexandreroman/motd-config
+    searchPaths:
+    - frontend
+---
+apiVersion: config.apps.tanzu.vmware.com/v1alpha4
+kind: ConfigurationSlice
+metadata:
+  name: motd-frontend-config
+spec:
+  interval: 30s
+  configurationSource: motd-frontend-config
+  content:
+  - application/default
+---
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ResourceClaim
+metadata:
+  name: motd-frontend-config
+spec:
+  ref:
+    apiVersion: config.apps.tanzu.vmware.com/v1alpha4
+    kind: ConfigurationSlice
+    name: motd-frontend-config
