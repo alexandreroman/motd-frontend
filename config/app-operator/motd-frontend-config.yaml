@@ -1,4 +1,4 @@
-apiVersion: "config.apps.tanzu.vmware.com/v1alpha4"
+apiVersion: config.apps.tanzu.vmware.com/v1alpha4
 kind: ConfigurationSource
 metadata:
   name: motd-frontend-config
@@ -6,6 +6,7 @@ spec:
   backends:
   - type: git
     uri: https://github.com/alexandreroman/motd-config
+    defaultLabel: main
     searchPaths:
     - frontend
 ---
