@@ -110,6 +110,7 @@ app.use('/js/jquery.slim.min.js', express.static(path.join(__dirname, 'node_modu
 app.use('/js/jquery.slim.min.map', express.static(path.join(__dirname, 'node_modules/jquery/dist/jquery.slim.min.map')))
 app.use('/js/axios.min.js', express.static(path.join(__dirname, 'node_modules/axios/dist/axios.min.js')))
 app.use('/js/axios.min.js.map', express.static(path.join(__dirname, 'node_modules/axios/dist/axios.min.js.map')))
+app.use('/css/gh-fork-ribbon.css', express.static(path.join(__dirname, 'node_modules/github-fork-ribbon-css/gh-fork-ribbon.css')))
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Start the HTTP server.
